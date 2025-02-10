@@ -1,0 +1,21 @@
+.h1{
+  font-size:40px;
+  background-color:yellow;
+  border-width:3px;
+}
+.head1{
+  color:green;
+  font-style:italic;
+}
+.head2{
+  color:red;
+  font-italic;
+}
+.head3{
+  color:blue;
+  font-style:italic;
+}
+.head4{
+  color:brown;
+  font-style:italic;
+}
