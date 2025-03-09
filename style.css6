@@ -1,0 +1,14 @@
+summary{
+	font-size:30px;
+	color:brown;
+	}
+th{
+	background-color:#07171a;
+	}
+td{
+	background-color:#392a66;
+	font-style:italic;
+	}
+p{
+	font-style:oblique;
+}
