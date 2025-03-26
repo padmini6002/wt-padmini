@@ -1,62 +1,53 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
-//C Program for Implementation of Singly Linked List
 #include <stdio.h>
 #include <stdlib.h>
-
-// Define the Node structure
-struct Node {
+struct Node
+{
     int data;
     struct Node* next;
 };
-
-// Function to create a new node 
-struct Node* createNode(int data) {
+struct Node* createNode(int data) 
+{
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
-// Function to insert a new element at the beginning of the singly linked list
-void insertAtFirst(struct Node** head, int data) {
+void insertAtFirst(struct Node** head, int data)
+{
     struct Node* newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
 }
-
-// Function to insert a new element at the end of the singly linked list
-void insertAtEnd(struct Node** head, int data) {
+void insertAtEnd(struct Node** head, int data) 
+{
     struct Node* newNode = createNode(data);
-    if (*head == NULL) {
+    if (*head == NULL)
+    {
         *head = newNode;
         return;
     }
     struct Node* temp = *head;
-    while (temp->next != NULL) {
+    while (temp->next != NULL)
+    {
         temp = temp->next;
     }
     temp->next = newNode;
 }
-
-// Function to insert a new element at a specific position in the singly linked list
-void insertAtPosition(struct Node** head, int data, int position) {
+void insertAtPosition(struct Node** head, int data, int position) 
+{
     struct Node* newNode = createNode(data);
-    if (position == 0) {
+    if (position == 0)
+    {
         insertAtFirst(head,data);
         return;
     }
     struct Node* temp = *head;
-    for (int i = 0; temp != NULL && i < position - 1; i++) {
+    for (int i = 0; temp != NULL && i < position - 1; i++)
+    {
         temp = temp->next;
     }
-    if (temp == NULL) {
+    if (temp == NULL) 
+    {
         printf("Position out of range\n");
         free(newNode);
         return;
@@ -64,10 +55,10 @@ void insertAtPosition(struct Node** head, int data, int position) {
     newNode->next = temp->next;
     temp->next = newNode;
 }
-
-// Function to delete the first node of the singly linked list
-void deleteFromFirst(struct Node** head) {
-    if (*head == NULL) {
+void deleteFromFirst(struct Node** head) 
+{
+    if (*head == NULL)
+    {
         printf("List is empty\n");
         return;
     }
@@ -75,41 +66,48 @@ void deleteFromFirst(struct Node** head) {
     *head = temp->next;
     free(temp);
 }
-
-// Function to delete the last node of the singly linked list
-void deleteFromEnd(struct Node** head) {
-    if (*head == NULL) {
+void deleteFromEnd(struct Node** head)
+{
+    if (*head == NULL)
+    {
         printf("List is empty\n");
         return;
     }
     struct Node* temp = *head;
-    if (temp->next == NULL) {
+    if (temp->next == NULL)
+    {
         free(temp);
         *head = NULL;
         return;
     }
-    while (temp->next->next != NULL) {
+    while (temp->next->next != NULL) 
+    {
         temp = temp->next;
     }
     free(temp->next);
     temp->next = NULL;
 }
 
-// Function to delete a node at a specific position in the singly linked list
-void deleteAtPosition(struct Node** head, int position) {
-    if (*head == NULL) {
+
+void deleteAtPosition(struct Node** head, int position)
+{
+    if (*head == NULL) 
+    {
         printf("List is empty\n");
         return;
     }
     struct Node* temp = *head;
-    if (position == 0) {
+    if (position == 0)
+    {
         deleteFromFirst(head);
         return;
     }
-    for (int i = 0; temp != NULL && i < position - 1; i++) {
+    for (int i = 0; temp != NULL && i < position - 1; i++)
+    {
         temp = temp->next;
     }
-    if (temp == NULL || temp->next == NULL) {
+    if (temp == NULL || temp->next == NULL)
+    {
         printf("Position out of range\n");
         return;
     }
@@ -118,18 +116,21 @@ void deleteAtPosition(struct Node** head, int position) {
     temp->next = next;
 }
 
-// Function to print the LinkedList
-void print(struct Node* head) {
+
+void print(struct Node* head) 
+{
     struct Node* temp = head;
-    while (temp != NULL) {
+    while (temp != NULL)
+    {
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");
 }
 
-// Main function
-int main() {
+
+int main()
+{
     struct Node* head = NULL;
     
     insertAtFirst(&head, 10);
