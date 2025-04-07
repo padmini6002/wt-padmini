@@ -63,7 +63,7 @@ struct node*deleteNode(struct node*root,int key)
       				free(root);
       				return temp;
     			} 
-			else(root->right==NULL) 
+			else(root->right==NULL); 
 			{
       				struct node*temp=root->left;
       				free(root);
