@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Calculator</title>
+        <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+<h1>Calculator</h1>
+<input type="text" size="4" class="inp" id="int1">
+<input type="text" size="4" class="inp" id="int2">
+<input type="button" value="+" class="bt" onclick="add()">
+<input type="button" value="-" class="bt" onclick="sub()">
+<input type="button" value="*" class="bt" onclick="mul()">
+<input type="button" value="/" class="bt" onclick="div()">
+<span class="op">=</span>
+<span id="res">0</span>
+<script>
+function add()
+{
+        var a=Number(document.getElementById("int1").value);
+        var b=Number(document.getElementById("int2").value);
+        var c=a+b;
+        document.getElementById("res").innerHTML=c;
+}
+function sub()
+{
+        var a=Number(document.getElementById("int1").value);
+        var b=Number(document.getElementById("int2").value);
+        var c=a-b;
+        document.getElementById("res").innerHTML=c;
+}
+function mul()
+{
+        var a=Number(document.getElementById("int1").value);
+        var b=Number(document.getElementById("int2").value);
+        var c=a*b;
+        document.getElementById("res").innerHTML=c;
+}
+function div()
+{
+        var a=Number(document.getElementById("int1").value);
+        var b=Number(document.getElementById("int2").value);
+        var c=a/b;
+        document.getElementById("res").innerHTML=c;
+}
+</script>
+</body>
+</html>
